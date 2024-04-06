@@ -67,16 +67,6 @@ app.use((req,res,next)=>{
     next();
 });
 
-/* app.get("/demouser",async (req,res)=>{
-    let fakeUser = new User({
-        email:"batman@justice.com",
-        username:"justice"
-    });
-
-    let newUser = await User.register(fakeUser,"vengeanceee");
-    res.send(newUser);
-}); */
-
 (async ()=>{
     await mongoose.connect(dbUrl);
 })().then(()=>{
@@ -89,11 +79,12 @@ app.use((req,res,next)=>{
 app.listen(8080,()=>{
     console.log("App is Listening on port 8080");
 });
-
 app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",usersRouter);
-
+app.get("/",(req,res)=>{
+    res.redirect('/listings');
+});
 app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"Page Not Found"));
 })
