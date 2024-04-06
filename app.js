@@ -4,7 +4,8 @@ if(process.env.NODE_ENV !="production"){
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const mongoose_url = 'mongodb://127.0.0.1:27017/wonderlust';
+/* const mongoose_url = 'mongodb://127.0.0.1:27017/wonderlust'; */
+const dbUrl = process.env.ATLASTDB_URL;
 const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
@@ -12,6 +13,7 @@ const ExpressError = require('./utils/ExpressError');
 const listingsRouter = require('./routes/listing.js');
 const reviewsRouter = require('./routes/review.js');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -25,8 +27,19 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended:true}));
 app.engine('ejs',ejsMate);
 
+const store = MongoStore.create({
+    mongoUrl:dbUrl,
+    crypto:{
+        secret: process.env.SECRET
+    },
+    touchAfter: 24*3600
+});
+store.on("error",()=>{
+    console.log("Error in mongostore",err);
+})
 const sessionOption = {
-    secret:"a sercret code here",
+    store,
+    secret: process.env.SECRET,
     resave:false,
     saveUninitialized :true,
     cookie:{
@@ -35,6 +48,7 @@ const sessionOption = {
         httpOnly:true
     }
 };
+
 
 app.use(session(sessionOption));
 app.use(flash());
@@ -64,7 +78,7 @@ app.use((req,res,next)=>{
 }); */
 
 (async ()=>{
-    await mongoose.connect(mongoose_url);
+    await mongoose.connect(dbUrl);
 })().then(()=>{
     console.log("connected to DB");
 })
@@ -74,10 +88,6 @@ app.use((req,res,next)=>{
 
 app.listen(8080,()=>{
     console.log("App is Listening on port 8080");
-});
-
-app.get('/',(req,res)=>{
-    res.send("Root path");
 });
 
 app.use("/listings",listingsRouter);
