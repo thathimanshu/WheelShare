@@ -2,8 +2,8 @@
 
 <div class="row mt-3 mb-3">
     <h1 class="col-6 offset-3">SignUp on Wanderlust</h1>
-    <div class="col-6 offset-3">
-        <form action="/signup" method="POST" class="needs-validation" novalidate>
+    <div class="col-8 col-md-6 offset-2 offset-md-3">
+        <form action="/signup" method="POST" class="needs-validation signupForm" novalidate>
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input
@@ -38,7 +38,17 @@
                  <div class="invalid-feedback">password is invalid</div>
             </div>
 
-            <button class="btn btn-success">Add</button>
+            <button class="btn btn-success signup-btn">Sign Up</button>
         </form>
     </div>
 </div>
+
+<script>
+    let signUpBttn = document.querySelector('.signup-btn');
+    let signUpForm = document.querySelector('.signupForm');
+    signUpBttn.addEventListener("click",()=>{
+        if(signUpForm.checkValidity()){
+            signUpBttn.classList.add('disabled');
+        }
+    })
+</script>
