@@ -26,6 +26,11 @@ Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Exp
    - Define the following variables:
      - `ATLASTDB_URL` (MongoDB connection string)
      - `SECRET` (Secret key for session management)
+     - `CLOUD_NAME` (your_cloud_name)
+     - `CLOUD_API_KEY` (your_cloud_api_key)
+     - `CLOUD_API_SECRET` (your_cloud_api_secret)
+
+
 4. Run the application: `npm start`
 
 ## Contributing
