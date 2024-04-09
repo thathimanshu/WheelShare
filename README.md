@@ -1,5 +1,8 @@
 # Wanderlust
 
+## Website Link
+To access the website, click [here](https://wanderlust-xlcc.onrender.com/), or copy and paste the following URL into your browser: https://wanderlust-xlcc.onrender.com/
+
 ## Description
 
 Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Express.js, Node.js, Passport.js, EJS, and Bootstrap. It allows users to browse and book vacation rentals.
@@ -37,9 +40,6 @@ Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Exp
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
-## License
-
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
