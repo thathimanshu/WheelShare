@@ -19,7 +19,7 @@ Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Exp
 
 ## Installation
 
-1. Clone the repository: `git clone [https://github.com/thathimanshu/WanderLust.git](https://github.com/thathimanshu/WanderLust.git)`
+1. Clone the repository: `git clone https://github.com/thathimanshu/WanderLust.git`
 2. Install dependencies: `npm install`
 3. Set up environment variables:
    - Create a `.env` file in the root directory
