@@ -115,8 +115,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
+    }
+
+    .p-card:hover::after{
+        background-color: rgba(0,0,0,0.2);
     }
     .p-card-text{
         position: absolute;
@@ -146,22 +150,34 @@
             </div>
             <h2>RENT A VEHICLE IN NCR</h2>
             <div class="d-flex justify-content-center">
+            <a href="/listings?q=Car">
+                
                 <div class="filter">
                     <div><a href="/listings?q=Car"><i class="fa-solid fa-car"></i></a></div>
                     <p>Rent Cars</p>
                   </div>
-                <div class="filter">
+            </a>
+            <a href="/listings?q=Bike">
+                
+                  <div class="filter">
                     <div><a href="/listings?q=Bike"><i class="fa-solid fa-motorcycle"></i></a></div>
                     <p>Rent Bikes</p>
                 </div>
+        </a>
+            <a href="/listings?q=EV">
+                
                 <div class="filter">
                     <div><a href="/listings?q=EV"><i class="fa-solid fa-charging-station"></i></a></div>
                     <p>EVs</p>
                 </div>
-                  <div class="filter">
-                    <div><a href="/listings?q=bicycle"><i class="fa-solid fa-bicycle"></i></a></div>
+        </a>
+            <a href="/listings?q=Bicycle">
+                  
+                <div class="filter">
+                    <div><a href="/listings?q=Bicycle"><i class="fa-solid fa-bicycle"></i></a></div>
                     <p>bicycles</p>
                 </div>
+        </a>
             </div>
         </div>
     </div>   
@@ -212,7 +228,7 @@
         <h2>ALL RENTAL OPTIONS </h2>
     </div>
     <div class="products">
-        <a href="/listings?q=car">
+        <a href="/listings?q=Car">
             <div class="p-card">
                 <img src="https://res.cloudinary.com/dcklrx0gr/image/upload/w_350/v1739274940/assets/uolyxtit3cgslr6sscga.jpg">
                 <p class="p-card-text">Explore cars</p>
