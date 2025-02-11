@@ -4,7 +4,6 @@ if(process.env.NODE_ENV !="production"){
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-/* const mongoose_url = 'mongodb://127.0.0.1:27017/wonderlust'; */
 const dbUrl = process.env.ATLASTDB_URL;
 const path = require('path');
 const methodOverride = require('method-override');
@@ -83,7 +82,7 @@ app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",usersRouter);
 app.get("/",(req,res)=>{
-    res.redirect('/listings');
+    res.render('./home.ejs');
 });
 app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"Page Not Found"));

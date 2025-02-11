@@ -1,4 +1,10 @@
 <% layout("/layouts/boilerplate")%>
+<style>
+    textarea:focus{
+      box-shadow: none!important;
+      border-color: #5a189a !important;
+    }
+</style>
 <div class="row mt-3">
     <div class="col-8 offset-1 offset-md-3">
         <h3><b><%=listing.title%></b></h3>
@@ -8,6 +14,7 @@
         <img src="<%=listing.image.url%>" class="card-img-top show-img mt-2" >
         <div class="card-body mt-3">
             <p class="card-text"> <i>Owned by: <%=listing.owner.username%></i> </p>
+            <p class="card-text"> <i>Type: <%=listing.type%></i> </p>
             <p class="card-text"> <%=listing.description%> </p>
             <p class="card-text"> &#8377;<%=listing.price.toLocaleString("en-IN") %> </p>
             <p class="card-text"> <%=listing.location%> </p>
@@ -34,7 +41,7 @@
             >
             <div class="mb-3 mt-3">
                 <label class="form-label" for="rating" >Rating</label>
-                <fieldset class="starability-slot">
+                <fieldset class="starability-basic">
                     <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="3" checked aria-label="No rating." />
                     <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                     <label for="first-rate1" title="Terrible">1 star</label>

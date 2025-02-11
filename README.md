@@ -1,4 +1,4 @@
-# Wanderlust
+# WheelShare 
 
 ## Website Link
 To access the website, click [here](https://wanderlust-xlcc.onrender.com/), or copy and paste the following URL into your browser: https://wanderlust-xlcc.onrender.com/

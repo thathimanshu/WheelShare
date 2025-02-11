@@ -1,4 +1,10 @@
 <% layout("/layouts/boilerplate")%>
+<style>
+  input:focus,textarea:focus, select:focus{
+    box-shadow: none!important;
+    border-color: #5a189a !important;
+  }
+</style>
 <div class="row">
   <div class="col-10 col-md-8 offset-1 offset-md-2">
     <form method="POST" 
@@ -13,7 +19,7 @@
         <input
           type="text"
           name="listing[title]" 
-          placeholder="Add a catchy title" 
+          placeholder="Add a title" 
           class="form-control"
           required
          />
@@ -23,6 +29,20 @@
             <label for="description" class="form-label">Description</label>
             <textarea name="listing[description]" class="form-control" required></textarea>
             <div class="invalid-feedback">Description is Required</div>
+        </div>
+        <div class="dropdown mb-3 col-4">
+          <label for="type">Select Vehicle Type</label>
+          <select name="listing[type]" id="type" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
+            <option value="" disabled selected>Select a vehicle type</option>
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Truck">Truck</option>
+            <option value="Van">Van</option>
+            <option value="Bus">Bus</option>
+            <option value="Helicopter">Helicopter</option>
+            <option value="EV">EV</option>
+            <option value="bicycle">bicycle</option>
+          </select>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>

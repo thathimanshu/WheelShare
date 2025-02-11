@@ -1,6 +1,15 @@
 const Listing = require("../models/listing.js");
 module.exports.index = async (req,res)=>{
-    const allListings = await Listing.find({});
+    let query = req.query.q || "";
+    let search = req.query.search || "";
+    let allListings;
+    if(query){
+        allListings = await Listing.find({ type: query }); 
+    } else if(search){
+        allListings = await Listing.find({title: { $regex: search, $options: "i" }});
+    } else{
+        allListings = await Listing.find({}); 
+    }
     res.render("listings/index.ejs",{allListings});
 };
 module.exports.renderNewForm = (req,res)=>{
@@ -61,7 +70,6 @@ module.exports.updateListing = async (req,res)=>{
 module.exports.destroyListing = async (req,res)=>{
     let {id} = req.params;
     let deleted = await Listing.findByIdAndDelete(id);
-    console.log(deleted);
     req.flash("success","Listing Delted!");
     res.redirect("/listings");
 }

@@ -2,14 +2,14 @@
   "engines": {
     "node": "20.10.0"
   },
-  "name": "wonderlust",
+  "name": "wheelshare",
   "version": "1.0.0",
   "description": "Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Himanshu",
+  "author": "Himanshu Saini",
   "license": "ISC",
   "dependencies": {
     "cloudinary": "^1.41.0",

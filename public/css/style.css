@@ -1,6 +1,6 @@
+/* https://coolors.co/palette/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff */
 body{
     font-family: "Plus Jakarta Sans", sans-serif !important;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -8,19 +8,19 @@ body{
 .container{
     flex:1;
 }
+
 .navbar{
     height: 5rem;
     background-color: white;
-}
-.fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
 }
 .nav-link{
     color: #222222 !important;
 }
 
 /* footer */
+footer{
+    border-top: 1px solid black;
+}
 .f-info-links a{
     text-decoration: none;
     color: #222222;
@@ -41,7 +41,6 @@ body{
 .f-info{
     height: 8rem;
     text-align: center;
-    background-color: #ebebeb;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,18 +80,18 @@ body{
 }
 /* Add page */
 .add-btn{
-    background-color: #fe424d !important;
+    background-color: #5a189a !important;
     border: none !important;
 }
 /* Edit Page */
 .edit-btn{
-    background-color: #fe424d !important;
+    background-color: #5a189a !important;
     border: none !important;
 }
 
 /* Show Page */
 .show-img{
-    height: 30vh;
+    height: 60dvh;
 }
 
 .btns{

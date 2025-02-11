@@ -1,5 +1,8 @@
 <% layout("/layouts/boilerplate")%>
 <style>
+  a{
+    color: rgb(88, 88, 88);
+  }
   #filters{
     display: flex;
     flex-wrap: wrap;
@@ -34,78 +37,72 @@
     align-items: center;
   }
 </style>
-<div id="filters">
-  <div class="filter">
-    <div><i class="fa-solid fa-fire"></i></div>
-    <p>Trending</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-bed"></i></div>
-    <p>Rooms</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-mountain-city"></i></div>
-    <p>Iconic cities</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Mountains</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-brands fa-fort-awesome"></i></div>
-    <p>Castles</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-person-swimming"></i></div>
-    <p>Amazing Pools</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-campground"></i></div>
-    <p>Camping</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-tractor"></i></div>
-    <p>Farms</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-regular fa-snowflake"></i></div>
-    <p>Artic</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-ship"></i></div>
-    <p>Boats</p>
-  </div>
-
-  <div class="tax-toggle">
-    <div class="form-check-reverse form-switch">
-      <input
-       class="form-check-input"
-       type="checkbox"
-       role="switch"
-       id="flexSwitchCheckDefault"
-      />
-      <label class="form-check-label" for="flexSwitchCheckDefault">Display price after taxes</label>
+<div class="container">
+  <div id="filters">
+    <div class="filter">
+      <div><a href="/listings?q=Car"><i class="fa-solid fa-car"></i></a></div>
+      <p>Cars</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=Bike"><i class="fa-solid fa-motorcycle"></i></a></div>
+      <p>Bikes</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=Truck"><i class="fa-solid fa-truck-moving"></i></a></div>
+      <p>Trucks</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=Van"><i class="fa-solid fa-van-shuttle"></i></a></div>
+      <p>Vans</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=Bus"><i class="fa-solid fa-bus"></i></a></div>
+      <p>Buses</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=Helicopter"><i class="fa-solid fa-helicopter"></i></a></div>
+      <p>Helicopters</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=EV"><i class="fa-solid fa-charging-station"></i></a></div>
+      <p>EVs</p>
+    </div>
+    <div class="filter">
+      <div><a href="/listings?q=bicycle"><i class="fa-solid fa-bicycle"></i></a></div>
+      <p>bicycles</p>
+    </div>
+  
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input
+         class="form-check-input"
+         type="checkbox"
+         role="switch"
+         id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display price after taxes</label>
+      </div>
     </div>
   </div>
-</div>
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
-    <%for(let listing of allListings){ %>
-        <a href="/listings/<%=listing._id%>" class="listing-link">
-        <div class="card col listing-card">
-            <img src="<%=listing.image.url%>" style="height: 20rem;" class="card-img-top">
-            <div class="card-img-overlay"> </div>
-            <div class="card-body">
-                <b><%=listing.title%></b> <br> 
-                <p class="card-text without-tax">
-                &#8377;<%=listing.price.toLocaleString("en-IN")%> / night
-              </p>
-              <p class="card-text tax-info">
-                &#8377;<%=(1.18*listing.price).toLocaleString("en-IN")%> / night including GST 
-              </p>
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+      <%for(let listing of allListings){ %>
+          <a href="/listings/<%=listing._id%>" class="listing-link">
+          <div class="card col listing-card">
+              <img src="<%=listing.image.url%>" style="height: 20rem;" class="card-img-top">
+              <div class="card-img-overlay"> </div>
+              <div class="card-body">
+                  <b><%=listing.title%></b> <br> 
+                  <p class="card-text without-tax">
+                  &#8377;<%=listing.price.toLocaleString("en-IN")%> / day
+                </p>
+                <p class="card-text tax-info">
+                  &#8377;<%=(1.18*listing.price).toLocaleString("en-IN")%> / day including GST 
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-    <% } %>
+          </a>
+      <% } %>
+  </div>
 </div>
         
 
