@@ -1,11 +1,11 @@
 # WheelShare 
 
 ## Website Link
-To access the website, click [here](https://wanderlust-xlcc.onrender.com/), or copy and paste the following URL into your browser: https://wanderlust-xlcc.onrender.com/
+To access the website, click [here](https://wheelshare.onrender.com/), or copy and paste the following URL into your browser: https://wheelshare.onrender.com/
 
 ## Description
 
-Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Express.js, Node.js, Passport.js, EJS, and Bootstrap. It allows users to browse and book vacation rentals.
+WheelShare is a full-stack Vehicle Rental Platform developed using MongoDB, Express.js, Node.js, Passport.js, EJS, and Bootstrap. It allows users to browse and book vacation rentals.
 
 ## Features
 
@@ -22,7 +22,7 @@ Wanderlust is a full-stack Vacation Rental Platform developed using MongoDB, Exp
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/thathimanshu/WanderLust.git`
+1. Clone the repository: `git clone https://github.com/thathimanshu/WheelShare.git`
 2. Install dependencies: `npm install`
 3. Set up environment variables:
    - Create a `.env` file in the root directory
