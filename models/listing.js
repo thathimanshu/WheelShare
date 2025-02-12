@@ -13,8 +13,8 @@ const listingSchema = new Schema({
         filename:String
     },
     price:Number,
-    location:String,
-    country:String,
+    city:String,
+    pickup:String,
     reviews:[
         {
             type:Schema.Types.ObjectId,
